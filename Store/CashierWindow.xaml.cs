@@ -343,6 +343,22 @@ namespace Store
             btn.Show();
             this.Close();
         }
+
+        public void PlaceOrder(int productId, int quantity, decimal price)
+        {
+            if (quantity <= 0)
+            {
+                MessageBox.Show("Количество товара должно быть больше нуля.", 
+                               "Ошибка", 
+                               MessageBoxButton.OK, 
+                               MessageBoxImage.Warning);
+                return;
+            }
+            decimal total = quantity * price;
+            SaveOrder(productId, quantity, total);
+        }
+
+
     }
 
     public class CartItem : INotifyPropertyChanged
