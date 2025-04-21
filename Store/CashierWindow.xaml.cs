@@ -150,7 +150,7 @@ namespace Store
 
         private void CalculateTotals()
         {
-            TotalPrice = CartItems.Sum(item => item.Price * item.Quantity);
+            TotalPrice = Math.Round(quantity * price, 2);
             TotalDiscount = CartItems.Sum(item => item.DiscountAmount);
             FinalPrice = TotalPrice - TotalDiscount;
 
