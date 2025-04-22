@@ -23,6 +23,7 @@ namespace Store
     {
         private string dbCon = "Server=localhost;Port=5432;Database=Store;User Id=postgres;Password=12345";
         private Dictionary<string, Func<Window>> roleWindows;
+        public string PhoneNumber { get; set; }
 
         public MainWindow()
         {
